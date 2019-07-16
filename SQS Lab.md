@@ -25,7 +25,7 @@ import boto3
 
 def lambda_handler(event, context):
 
-    sqs_queue_url="https://sqs.us-east-1.amazonaws.com/831210339789/LabQueue.fifo"
+    sqs_queue_url="<QUEUE_URL>"
     
     sqs_client = boto3.client('sqs')
    
@@ -96,5 +96,6 @@ def lambda_handler(event, context):
 7. Click **Save** at the bottom of the screen
 8. Simply click on the **Test** button on the **readmessage** Lambda function home page to send the message to SQS
 9. You should see the user interface saying **Execution result:succeeded**. Expanding it will show the details of the execution along with the content of the SQS message in the **Log output** section.
+
 
 
