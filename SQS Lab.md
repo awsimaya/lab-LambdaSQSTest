@@ -4,17 +4,17 @@
 1. Login to AWS console - https://console.aws.amazon.com
 2. Type **SQS** in the Services search box and select **Amazon SQS**
 3. On the **SQS** console home, click **Create New Queue**
-4. Enter **LabQueue.fifo** in the **Queue Name** textbox. 
+4. Enter **<Your_Name>-LabQueue.fifo** in the **Queue Name** textbox. 
 5. Select **FIFO Queue** under **What type of queue do you need?
 6. Scroll down and click **Quick-Create Queue**
-7. Your queue is not successfully created.
+7. Your queue is now successfully created.
 8. Copy the **URL** from the **Details** tab at the bottom of the screen and save it in a text editor. We will use this URL in the Lambda function we will create later.
 
 ### 2. Create a Python based Lambda function to send messages to SQS
 1. Navigate to AWS Lambda 
 2. Click on **Create function**
 3. Select **Author from scratch**
-4. Name the funcion as **sendmessage**
+4. Name the funcion as **<Your_Name>-sendmessage**
 5. Select **Python 3.6** as the runtime
 6. Click **Create function**
 7. Replace the default code with the code in the block below
@@ -48,7 +48,7 @@ def lambda_handler(event, context):
 3. Select **Python 3.6** as the runtime
 4. Expand **Choose or create an execution role** by clicking on it
 5. Select **Use an existing role** under **Execution role** section
-6. Select the same role you created earlier for the **sendmessage** lambda function. See screenshot below for details
+6. Select the same role you created earlier for the **<Your_Name>-sendmessage** lambda function. See screenshot below for details
 ![readmessage](./images/readmessage.png)
 7. Click **Create function**
 8. Replace the default code with the code below
@@ -69,15 +69,15 @@ def lambda_handler(event, context):
 
 ### Test everything
 #### Send message to the SQS queue
-1. Navigate to the **sendmessage** Lambda function page
+1. Navigate to the **<Your_Name>-sendmessage** Lambda function page
 2. Click on the drop down near the **Test** button at the top right and select **Configure test events**
 3. In the new popup, select **Create new test event**
 4. Select **Hello World** template.
-5. Name the event as **newmessage**
+5. Name the event as **<Your_Name>-newmessage**
 6. Clear the textbox with sample inpute json and enter any string within quotes. See screenshot below for details
 ![input](./images/inputtext.png)
 7. Click **Save** at the bottom of the screen
-8. Simply click on the **Test** button on the **sendmessage** Lambda function home page to send the message to SQS
+8. Simply click on the **Test** button on the **<Your_Name>-sendmessage** Lambda function home page to send the message to SQS
 9. You should see the user interface saying **Execution result:succeeded**. Click on it to see details of the execution. 
 
 #### Check the message in SQS queue
@@ -86,7 +86,7 @@ def lambda_handler(event, context):
 3. You should be able to see the message that you just sent from the Lambda function.
 
 #### Read the message from the SQS queue
-1. Navigate to the **readmessage** Lambda function page
+1. Navigate to the **<Your_Name>-readmessage** Lambda function page
 2. Click on the drop down near the **Test** button at the top right and select **Configure test events**
 3. In the new popup, select **Create new test event**
 4. Select **Hello World** template.
@@ -94,7 +94,7 @@ def lambda_handler(event, context):
 6. Clear the textbox with sample inpute json and replace it with empty quotes
 ![input](./images/output.png)
 7. Click **Save** at the bottom of the screen
-8. Simply click on the **Test** button on the **readmessage** Lambda function home page to send the message to SQS
+8. Simply click on the **Test** button on the **<Your_Name>-readmessage** Lambda function home page to send the message to SQS
 9. You should see the user interface saying **Execution result:succeeded**. Expanding it will show the details of the execution along with the content of the SQS message in the **Log output** section.
 
 
