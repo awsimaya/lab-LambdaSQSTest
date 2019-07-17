@@ -3,7 +3,7 @@
 ### 1. Create an Amazon SQS queue
 1. Login to AWS console - https://console.aws.amazon.com
 2. Type **SQS** in the Services search box and select **Amazon SQS**
-3. On the **SQS** console home, click **Create New Queue**
+3. On the **SQS** console home, click **Create New Queue** or click **Get started**
 4. Enter **<Your_Name>-LabQueue.fifo** in the **Queue Name** textbox. 
 5. Select **FIFO Queue** under **What type of queue do you need?
 6. Scroll down and click **Quick-Create Queue**
@@ -51,7 +51,7 @@ def lambda_handler(event, context):
 6. Select the same role you created earlier for the **<Your_Name>-sendmessage** lambda function. See screenshot below for details
 ![readmessage](./images/readmessage.png)
 7. Click **Create function**
-8. Replace the default code with the code below
+8. Replace the default code with the code below and click the **Save** button at the top right to save the changes
 ``` python
 import json
 import boto3
